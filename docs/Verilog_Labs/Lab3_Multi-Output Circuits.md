@@ -113,7 +113,7 @@ We can run Simulation to check the code by clicking the Run Simulation under the
 
 Then, we can click on the Run synthesis under the SYNTHESIS and Run implementation under the IMPLEMENTATION. We should add the appropriate board-related master XDC file to the project and edit it to include the related pins like the below:
 
-<div align=center><img src="imgs/v1/3.png" alt="drawing" width="800"/></div>
+<div align=center><img src="imgs/v5/7.PNG" alt="drawing" width="800"/></div>
 
 Because the board has four LEDs, so we can also use the RGB LED(LD5 and LD4).
 
