@@ -588,7 +588,7 @@ endmodule
 
 The simulation result is shown below:
 
-<div align=center><img src="imgs/v1/11.png" alt="drawing" width="900"/></div>
+<div align=center><img src="imgs/v5/10.PNG" alt="drawing" width="900"/></div>
 
 If we want to implement it on the board, we need to change the code and add one another IP like below：
 
