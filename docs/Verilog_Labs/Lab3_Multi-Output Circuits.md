@@ -115,15 +115,11 @@ Then, we can click on the Run synthesis under the SYNTHESIS and Run implementati
 
 <div align=center><img src="imgs/v5/7.PNG" alt="drawing" width="800"/></div>
 
-Because the board has four LEDs, so we can also use the RGB LED(LD5 and LD4).
-
-<div align=center><img src="imgs/v1/4.png" alt="drawing" width="600"/></div>
-
 Click on the Generate Bitstream under the PROGRAM AND DEBUG, and when writing bitstream is complete, we can download the file to the board and verify the lab.
 
-<div align=center><img src="imgs/v4/1.jpg" alt="drawing" width="200"/></div>
+<div align=center><img src="imgs/v5/8.jpg" alt="drawing" width="200"/></div>
 
-<div align=center><img src="imgs/v4/2.jpg" alt="drawing" width="200"/></div>
+<div align=center><img src="imgs/v5/9.jpg" alt="drawing" width="200"/></div>
 
 ### Part3-1-2
 
@@ -285,76 +281,77 @@ always@(*)
     begin
      case (inputs)
           // Check for encoder being disabled or no input active
+	  // FIX HERE
             9'b1xxxxxxxx: // If enable is high (active low logic), the encoder is disabled
                         begin
-                            y = 3'b111;
-                            en_out = 1;
-                            gs = 1;
+                            y = 3'b;
+                            en_out = ;
+                            gs = ;
                         end
             9'b011111111:
                         begin
-                            y = 3'b111;
-                            en_out = 0;
-                            gs = 1;
+                            y = 3'b;
+                            en_out = ;
+                            gs = ;
                         end
             9'b0xxxxxxx0:
                         begin
-                            y = 3'b000;
-                            en_out = 1;
-                            gs = 0;
+                            y = 3'b;
+                            en_out = ;
+                            gs = ;
                         end
             9'b0xxxxxx01:
                         begin
-                            y = 3'b001;
-                            en_out = 1;
-                            gs = 0;
+                            y = 3'b;
+                            en_out = ;
+                            gs = ;
                         end    
             9'b0xxxxx011:
                         begin
-                            y = 3'b010;
-                            en_out = 1;
-                            gs = 0;
+                            y = 3'b;
+                            en_out = ;
+                            gs = ;
                         end           
             9'b0xxxx0111:
                         begin
-                            y = 3'b011;
-                            en_out = 1;
-                            gs = 0;
+                            y = 3'b;
+                            en_out = ;
+                            gs = ;
                         end
             9'b0xxx01111:
                         begin
-                            y = 3'b111;
-                            en_out = 1;
-                            gs = 0;
+                            y = 3'b;
+                            en_out = ;
+                            gs = ;
                         end            
             9'b0xx011111:
                         begin
-                            y = 3'b100;
-                            en_out = 1;
-                            gs = 0;
+                            y = 3'b;
+                            en_out = ;
+                            gs = ;
                         end            
             9'b0xx011111:
                         begin
-                            y = 3'b101;
-                            en_out = 1;
-                            gs = 0;
+                            y = 3'b;
+                            en_out = ;
+                            gs = ;
                         end             
             9'b0x0111111:
                         begin
-                            y = 3'b110;
-                            en_out = 1;
-                            gs = 0;
+                            y = 3';
+                            en_out = ;
+                            gs = ;
                         end            
             9'b001111111:
                         begin
-                            y = 3'b111;
-                            en_out = 1;
-                            gs = 0;
+                            y = 3'b;
+                            en_out = ;
+                            gs = ;
                         end             
              default:  begin
-                            y = 3'b000;
-                            en_out = 0;
-                            gs = 0;
+                            y = 3'b;
+                            en_out = ;
+                            gs = ;
                         end              
         endcase
     
@@ -585,6 +582,8 @@ module ROM_comparator_tb;
         // Stop the simulation after all combinations have been tested
         #20 $stop;
     end
+
+endmodule
 ```
 
 The simulation result is shown below:
