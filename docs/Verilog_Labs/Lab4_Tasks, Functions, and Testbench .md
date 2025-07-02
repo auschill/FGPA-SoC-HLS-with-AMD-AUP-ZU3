@@ -567,7 +567,7 @@ endmodule
 ```
 
 
-**tb.v**
+**lab4_3_1_tb.v**
 ```verilog
 module tb_ripple_carry_adder;
 
@@ -642,24 +642,9 @@ module waveform_generator(
     output reg G2
 );
 
+// FIX HERE
 initial begin
-    // Initialize signals
-    A = 0; G1 = 0; G2 = 1;
     
-    // A waveform
-  
-    #40 A = 1; // At 40ns
-    
-    // G1 waveform
-    #20 G1 = 1; // At 60ns
-    
-    #20 G2 = 0; // At 80ns
-    
-    #20 A = 0; // At 100ns
-    
-    // G2 waveform
-    #20 G1 = 0; // At 120ns
-    #20 G2 = 1; // At 140ns
 end
 
 endmodule
