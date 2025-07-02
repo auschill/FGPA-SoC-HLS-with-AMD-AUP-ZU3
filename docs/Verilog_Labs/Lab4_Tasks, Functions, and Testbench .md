@@ -141,10 +141,10 @@ Simulate the design with the provided testbench, add_two_values_task_tb.v, and v
 design works. Look for the messages displayed by the $display task in the simulator console
 window. 
 
-**tb.v**
+**lab4_1_1_tb.v**
 ```verilog
 // Testbench for the add_two_values_task module
-module tb();
+module lab4_1_1_tb();
     reg [3:0] ain, bin; // Declare 4-bit input registers for the module under test
     wire cout;          // Declare a single-bit output wire for the carry output
     wire [3:0] sum;     // Declare a 4-bit output wire for the sum output
@@ -240,10 +240,10 @@ Now we can see the ```Schematic``` under the RTL ANALYSIS part like below:
 <div align=center><img src="imgs/loop.png" alt="drawing" width="1000"/></div>
 
 
-**tb.v**
+**lab4_1_2_tb.v**
 ```verilog
 // Define testbench module
-module tb();
+module lab4_1_2_tb();
     reg [7:0] ain;     // 8-bit input register for the module under test
     wire parity;       //Single-bit output wire for the module under test
     integer k;         // Loop variable for test iteration
@@ -354,10 +354,10 @@ endmodule
 
 ```
 
-**tb.v**
+**lab4_2_1_tb.v**
 ```verilog
 // Testbench module to verify the add_two_values_function functionality
-module tb();
+module lab4_2_1_tb();
     reg [3:0] ain, bin;  // Define 4-bit registers for inputs
     wire [4:0] sum;      // Define a 5-bit wire for the output, as the sum may overflow 4 bits
     integer k;           // Variable used for generating test cases in the for loop
@@ -439,10 +439,10 @@ endmodule
 ```
 
 
-**tb.v**
+**lab4_2_2_tb.v**
 ```verilog
 // Testbench for the calc_ones_function module
-module tb();
+module lab4_2_2_tb();
     reg [7:0] ain;                       // 8-bit input for testing
     wire [2:0] number_of_ones;           // 3-bit output representing the number of ones in 'ain'
     integer k;                           // Loop variable for generating different test vectors
