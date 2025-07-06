@@ -59,7 +59,7 @@ LED1. Implement the design and verify the functionality of the hardware.
 * Develop a testbench to test (see waveform above), perform behavioral simulation for 100ns, and
 validate the design. 
 
-**tb.v**
+**rs_flipflop_tb.v**
 ```verilog
 module rs_flipflop_tb;
 
@@ -84,28 +84,8 @@ initial begin
     R = 0;
     S = 0;
     
-    // Apply test vectors
-    #10; // Wait for 10ns
-    S = 1; // Set
-    #10; 
-    S = 0; // Release Set
-    #10;
-    R = 1; // Reset
-    #10;
-    R = 0; // Release Reset
-    S = 1; // Set again
-    #10;
-    R = 1;
-    S = 0;
-    #10;
-    R = 0;
-    S = 1;
-    #10;
-    R = 1;
-    S = 0;
-    #10;
-    S = 1;
-    #20;
+    // FIX HERE
+
     // Finish the simulation
     $finish;
 end
@@ -151,15 +131,27 @@ hardware.
 **lab5_1_2.v**
 ```verilog
 module gated_sr_latch_dataflow(
-    input wire R, 
-    input wire S, 
-    input wire E, 
-    output wire Q, 
+    input wire R,
+    input wire S,
+    input wire E,
+    output reg Q,
     output wire Qbar
 );
 
-assign Q    = ~ ((R & E)|Qbar);
-assign Qbar = ~ ((S & E)|Q);
+initial Q = 1'b0;
+
+always @(*) begin
+    if (E) begin
+        case ({S, R})
+            2'b00: ; // Hold state
+            2'b01: Q <= 1'b0; // Reset
+            2'b10: Q <= 1'b1; // Set
+            2'b11: Q <= 1'bx; // Invalid state
+        endcase
+    end
+end
+
+assign Qbar = ~Q;
 
 endmodule
 
@@ -173,9 +165,9 @@ endmodule
 * Develop a testbench to test (see waveform above), perform behavioral simulation for 100ns, and
 validate the design. 
 
-**tb.v**
+**lab5_1_2_tb.v**
 ```verilog
-module tb;
+module lab5_1_2_tb;
     // Inputs
     reg R; // Reset input
     reg S; // Set input
