@@ -344,9 +344,9 @@ endmodule
 * Develop a testbench to test (see waveform above), perform behavioral simulation for 100ns, and
 validate the design. 
 
-**tb.v**
+**lab5_1_3_tb.v**
 ```verilog
-module tb;
+module lab5_1_3_tb;
 
     // Inputs for the D Latch
     reg D; // Data input
@@ -477,7 +477,7 @@ endmodule
 * Develop a testbench to test (see waveform above), perform behavioral simulation for 100ns, and
 validate the design. 
 
-**tb.v**
+**D_ff_tb.v**
 ```verilog
 module D_ff_tb;
 
@@ -567,9 +567,9 @@ endmodule
 * Develop a testbench to test (see waveform above), perform behavioral simulation for 100ns, and
 validate the design. 
 
-**tb.v**
+**lab5_2_2_tb.v**
 ```verilog
-module tb;
+module lab5_2_2_tb;
 // Inputs
 reg D;
 reg clk;
@@ -692,9 +692,9 @@ endmodule
 * Develop a testbench to test (see waveform above), perform behavioral simulation for 100ns, and
 validate the design. 
 
-**tb.v**
+**lab5_2_3_tb.v**
 ```verilog
-module tb;
+module lab5_2_3_tb;
 reg D;
 reg clk;
 reg rstn;
@@ -743,10 +743,6 @@ We can run a Simulation to check the code by clicking the Run Simulation under t
 
 <div align=center><img src="imgs/v1/48.png" alt="drawing" width="600"/></div>
 
-Verify the design in hardware. Assign D input to BTN0, reset to BTN3, Clk to
-H16, and output Q to LED0. And you can see the more information about the [Pin layout](https://uri-nextlab.github.io/ParallelProgrammingLabs/docs/Verilog_Labs/Lab1_Modeling_Concepts.html)
-
-<div align=center><img src="imgs/v1/add_information.png" alt="drawing" width="600"/></div>
 
 ### Part5-2-4
 
@@ -817,9 +813,9 @@ endmodule
 * Develop a testbench to test (see waveform above), perform behavioral simulation for 100ns, and
 validate the design. 
 
-**tb.v**
+**lab5_2_4_tb.v**
 ```verilog
-module tb;
+module lab5_2_4_tb;
 // Inputs
 reg D;
 reg clk;
@@ -923,9 +919,9 @@ endmodule
 * Develop a testbench to test (see waveform above), perform behavioral simulation for 100ns, and
 validate the design. 
 
-**tb.v**
+**lab5_2_5_tb.v**
 ```verilog
-module tb;
+module lab5_2_5_tb;
 // Inputs
 reg en;
 reg clk;
