@@ -92,9 +92,9 @@ endmodule
 * Develop a testbench to test (see waveform above), perform behavioral simulation for 100ns, and
 validate the design. 
 
-**tb.v**
+**lab6_1_1_tb.v**
 ```verilog
-module tb();
+module lab6_1_1_tb();
 
 reg clk;
 reg [3:0] D;
@@ -188,10 +188,10 @@ endmodule
 * Develop a testbench to test (see waveform above), perform behavioral simulation for 100ns, and
 validate the design. 
 
-**tb.v**
+**lab6_1_2_tb.v**
 ```verilog
 
-module tb_four_bit_register;
+module four_bit_register_tb;
 
 // Testbench signals
 reg tb_Clk;
@@ -306,9 +306,9 @@ endmodule
 * Develop a testbench to test (see waveform above), perform behavioral simulation for 100ns, and
 validate the design. 
 
-**tb.v**
+**lab6_1_3_tb.v**
 ```verilog
-module tb();
+module lab6_1_3_tb();
 // Testbench signals
 reg tb_Clk;
 reg ShiftIn;
@@ -394,9 +394,9 @@ endmodule
 * Develop a testbench to test (see waveform above), perform behavioral simulation for 100ns, and
 validate the design. 
 
-**tb.v**
+**lab6_1_4_tb.v**
 ```verilog
-module tb;
+module lab6_1_4_tb;
 // Testbench signals
 reg tb_Clk;
 reg ShiftIn;
@@ -484,9 +484,9 @@ endmodule
 * Develop a testbench to test (see waveform above), perform behavioral simulation for 100ns, and
 validate the design. 
 
-**tb.v**
+**lab6_1_5_tb.v**
 ```verilog
-module tb;
+module lab6_1_5_tb;
 
 // Testbench signals
 reg tb_Clk;
@@ -617,7 +617,7 @@ endmodule
 * Develop a testbench to test (see waveform above), perform behavioral simulation for 100ns, and
 validate the design. 
 
-**tb.v**
+**lab6_2_1_tb.v**
 ```verilog
 module tb_t_counter_8bit;
     reg clk = 0;
@@ -826,7 +826,7 @@ endmodule
 * Develop a testbench to test (see waveform above), perform behavioral simulation for 100ns, and
 validate the design. 
 
-**tb.v**
+**lab6_2_3_tb.v**
 ```verilog
 module tb_t_counter_4bit;
     reg clk;
