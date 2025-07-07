@@ -496,7 +496,7 @@ reg shiftIn;
 wire shiftOut;
 wire  [3:0] parallelOut;
 // Instantiate the 4-bit register
-sip_shift_register uut(
+sipo_shift_register uut(
     .clk(tb_Clk),
     .shiftEn(shiftEn),
     .shiftIn(shiftIn),
