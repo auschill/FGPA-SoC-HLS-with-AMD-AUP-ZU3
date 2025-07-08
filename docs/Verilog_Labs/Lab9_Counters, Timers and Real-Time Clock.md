@@ -597,19 +597,19 @@ module top_module(
 );
 
 // Signal declarations
-wire clk_5MHz;            // Intermediate clock signal, 5 MHz obtained from clock wizard
+wire clk_10MHz;            // Intermediate clock signal, 10 MHz obtained from clock wizard
 wire locked_q;            // Lock indicator from the clock wizard
 
-// Clock wizard instantiation to reduce 100 MHz clock to 5 MHz
+// Clock wizard instantiation to reduce 100 MHz clock to 10 MHz
 clk_wiz_0 clk_wizard_inst(
-    .clk_out1(clk_5MHz),  // 5 MHz output clock
+    .clk_out1(clk_10MHz),  // 10 MHz output clock
     .locked(locked_q),    // Indicates when the clock is stabilized
     .clk_in1(clk_in1)     // Input clock from the main system clock (e.g., 100 MHz)
 );
 
 // Clock divider instantiation to generate one-tenth of a second pulse
 clock_divider clk_divider_inst(
-    .clk_in(clk_5MHz),    // Input clock from the clock wizard (5 MHz)
+    .clk_in(clk_10MHz),    // Input clock from the clock wizard (10 MHz)
     .reset(reset),        // Reset signal to reinitialize the divider
     .clk_out(one_tenth)   // Output clock with a period of one-tenth of a second
 );
@@ -618,13 +618,13 @@ endmodule
 
 // Clock divider module, used to create slower clock signals
 module clock_divider(
-    input clk_in,         // Input clock, here it is 5 MHz from clock wizard
+    input clk_in,         // Input clock, here it is 10 MHz from clock wizard
     input reset,          // Active high reset to reset the counter
     output reg clk_out = 0 // Output clock, initially set to 0, toggles every one-tenth second
 );
 
-// Counter for clock division, big enough to count up to the 5 MHz
-reg [22:0] counter = 0;   // Counter to reach one-tenth second at 5 MHz input
+// Counter for clock division, big enough to count up to the 10 MHz
+reg [23:0] counter = 0;   // Counter to reach one-tenth second at 10 MHz input
 
 // Clock division logic
 always @(posedge clk_in or posedge reset) begin
@@ -632,7 +632,7 @@ always @(posedge clk_in or posedge reset) begin
         counter <= 0;
         clk_out <= 0;
     end else begin
-        if(counter == 5_000_00 - 1) begin // Count up to one-tenth second (5,000,000 cycles at 5 MHz)
+        if(counter == 10_000_00 - 1) begin // Count up to one-tenth second (10,000,000 cycles at 10 MHz)
             counter <= 0;
             clk_out <= ~clk_out; // Toggle clock output every one-tenth second
         end else begin
@@ -645,7 +645,7 @@ endmodule
 
 ```
 
-**tb.v**
+**tb_up_five_minutes.v**
 ```verilog
 module tb_up_five_minutes();
 
@@ -687,11 +687,6 @@ initial begin
 
     // Enable the counter and let it run
     enable_tb = 1;    // Enable counting
-    #1_000_000; // Let's run for 1ms simulation time which should be sufficient to see some counting
-
-    // End the simulation phase
-    enable_tb = 0;    // Disable the counter to stop counting
-    #100; // Observe for a little while longer before finishing the simulation
 
     // $finish; // Uncomment to end the simulation explicitly
 end
