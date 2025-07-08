@@ -396,7 +396,7 @@ to force the use of the DSP48 slices. Go through the design flow, generate the b
 
 
 
-**lab9_2_1.v**
+**lab9_2_2.v**
 ```verilog
 (* use_dsp48 = "yes" *) 
 module up_down_counter #(
