@@ -370,7 +370,7 @@ endmodule
 
 Add the appropriate board-related master XDC file to the project and edit it to include the related pins like below:
 
-<div align=center><img src="imgs/v2/42.png" alt="drawing" width="600"/></div>
+<div align=center><img src="imgs/v5/13.PNG" alt="drawing" width="600"/></div>
 
 Then generate the bitstream and fill out the following information after reviewing the Project Summary tab.
 
@@ -387,7 +387,7 @@ Then generate the bitstream and fill out the following information after reviewi
 
 Click the ```Reports``` and click on the first ```Utilization - Synth Design``` and see the utilization.
 
-<div align=center><img src="imgs/v2/48.png" alt="drawing" width="600"/></div>
+<div align=center><img src="imgs/v5/14.PNG" alt="drawing" width="600"/></div>
 
 ### Part9-2-2
 
@@ -428,7 +428,7 @@ endmodule
 
 Add the appropriate board-related master XDC file to the project and edit it to include the related pins like below:
 
-<div align=center><img src="imgs/v2/42.png" alt="drawing" width="600"/></div>
+<div align=center><img src="imgs/v5/13.PNG" alt="drawing" width="600"/></div>
 
 Then generate the bitstream and fill out the following information after reviewing the Project Summary tab.
 
@@ -444,7 +444,7 @@ Then generate the bitstream and fill out the following information after reviewi
 
 Click the ```Reports``` and click on the first ```Utilization - Synth Design``` and see the utilization.
 
-<div align=center><img src="imgs/v2/48.png" alt="drawing" width="600"/></div>
+<div align=center><img src="imgs/v5/14.PNG" alt="drawing" width="600"/></div>
 
 ### Part9-2-3
 
@@ -478,7 +478,7 @@ endmodule
 
 Add the appropriate board-related master XDC file to the project and edit it to include the related pins like below:
 
-<div align=center><img src="imgs/v2/47.png" alt="drawing" width="600"/></div>
+<div align=center><img src="imgs/v5/15.PNG" alt="drawing" width="600"/></div>
 
 Then generate the bitstream and fill out the following information after reviewing the Project Summary tab.
 
@@ -494,7 +494,7 @@ Then generate the bitstream and fill out the following information after reviewi
 
 Click the ```Reports``` and click on the first ```Utilization - Synth Design``` and see the utilization.
 
-<div align=center><img src="imgs/v2/48.png" alt="drawing" width="600"/></div>
+<div align=center><img src="imgs/v5/14.PNG" alt="drawing" width="600"/></div>
 
 ### Part9-2-4
 
