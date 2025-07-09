@@ -119,7 +119,7 @@ Then you can press the button on the board and you can see the LED is on like be
 <div align=center><img src="imgs/v5/4.jpg" alt="drawing" width="400"/></div>
 
 
-The second way that you can refer to the [Soc_labs](https://uri-nextlab.github.io/ParallelProgrammingLabs/docs/Labs/Lab1_led.html)
+The second way that you can refer to the [Soc_labs](https://auschill.github.io/FGPA-SoC-HLS-with-AMD-AUP-ZU3/docs/Labs/Lab1_led.html)
 
 ### Part 1-1-2
 
