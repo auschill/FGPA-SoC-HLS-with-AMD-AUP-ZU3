@@ -347,10 +347,10 @@ You can see the ```Schematic``` under the RTL ANALYSIS as shown below:
 ############################
 # On-board Slide Buttons  #
 ############################
-set_property PACKAGE_PIN L19 [get_ports {din_0[3]}]
-set_property PACKAGE_PIN L20 [get_ports {din_0[2]}]
-set_property PACKAGE_PIN D20 [get_ports {din_0[1]}]
-set_property PACKAGE_PIN D19 [get_ports {din_0[0]}]
+set_property PACKAGE_PIN AB6 [get_ports {din_0[3]}]
+set_property PACKAGE_PIN AB7 [get_ports {din_0[2]}]
+set_property PACKAGE_PIN AB2 [get_ports {din_0[1]}]
+set_property PACKAGE_PIN AC6 [get_ports {din_0[0]}]
 ############################
 # On-board leds             #
 ############################
@@ -359,15 +359,15 @@ set_property PACKAGE_PIN M14 [get_ports {valid_0[3]}]
 set_property PACKAGE_PIN N16 [get_ports {valid_0[2]}]
 set_property PACKAGE_PIN P14 [get_ports {valid_0[1]}]
 set_property PACKAGE_PIN R14 [get_ports {valid_0[0]}]
-set_property IOSTANDARD LVCMOS33 [get_ports {din_0[3]}]
-set_property IOSTANDARD LVCMOS33 [get_ports {din_0[2]}]
-set_property IOSTANDARD LVCMOS33 [get_ports {din_0[1]}]
-set_property IOSTANDARD LVCMOS33 [get_ports {din_0[0]}]
-set_property IOSTANDARD LVCMOS33 [get_ports {valid_0[4]}]
-set_property IOSTANDARD LVCMOS33 [get_ports {valid_0[3]}]
-set_property IOSTANDARD LVCMOS33 [get_ports {valid_0[2]}]
-set_property IOSTANDARD LVCMOS33 [get_ports {valid_0[1]}]
-set_property IOSTANDARD LVCMOS33 [get_ports {valid_0[0]}]
+set_property IOSTANDARD LVCMOS18 [get_ports {din_0[3]}]
+set_property IOSTANDARD LVCMOS18 [get_ports {din_0[2]}]
+set_property IOSTANDARD LVCMOS18 [get_ports {din_0[1]}]
+set_property IOSTANDARD LVCMOS18 [get_ports {din_0[0]}]
+set_property IOSTANDARD LVCMOS18 [get_ports {valid_0[4]}]
+set_property IOSTANDARD LVCMOS18 [get_ports {valid_0[3]}]
+set_property IOSTANDARD LVCMOS18 [get_ports {valid_0[2]}]
+set_property IOSTANDARD LVCMOS18 [get_ports {valid_0[1]}]
+set_property IOSTANDARD LVCMOS18 [get_ports {valid_0[0]}]
 
 ```
 
@@ -499,34 +499,34 @@ endmodule // End of module part_4
 
 ```
 
- Add constraints code: `part_2.xdc`.
+ Add constraints code: `part_4.xdc`.
 
 ```verilog
 # PYNQ Pin Assignments
 ############################
 # On-board Slide Buttons  #
 ############################
-set_property PACKAGE_PIN L19 [get_ports {din_0[3]}]
-set_property PACKAGE_PIN L20 [get_ports {din_0[2]}]
-set_property PACKAGE_PIN D20 [get_ports {din_0[1]}]
-set_property PACKAGE_PIN D19 [get_ports {din_0[0]}]
+set_property PACKAGE_PIN AB6 [get_ports {din_0[3]}]
+set_property PACKAGE_PIN AB7 [get_ports {din_0[2]}]
+set_property PACKAGE_PIN AB2 [get_ports {din_0[1]}]
+set_property PACKAGE_PIN AC6 [get_ports {din_0[0]}]
 
 ############################
 # On-board leds             #
 ############################
-set_property PACKAGE_PIN M14 [get_ports {valid_0[3]}]
-set_property PACKAGE_PIN N16 [get_ports {valid_0[2]}]
-set_property PACKAGE_PIN P14 [get_ports {valid_0[1]}]
-set_property PACKAGE_PIN R14 [get_ports {valid_0[0]}]
+set_property PACKAGE_PIN AF2 [get_ports {valid_0[3]}]
+set_property PACKAGE_PIN AG1 [get_ports {valid_0[2]}]
+set_property PACKAGE_PIN AE4 [get_ports {valid_0[1]}]
+set_property PACKAGE_PIN AH1 [get_ports {valid_0[0]}]
 
-set_property IOSTANDARD LVCMOS33 [get_ports {din_0[3]}]
-set_property IOSTANDARD LVCMOS33 [get_ports {din_0[2]}]
-set_property IOSTANDARD LVCMOS33 [get_ports {din_0[1]}]
-set_property IOSTANDARD LVCMOS33 [get_ports {din_0[0]}]
-set_property IOSTANDARD LVCMOS33 [get_ports {valid_0[3]}]
-set_property IOSTANDARD LVCMOS33 [get_ports {valid_0[2]}]
-set_property IOSTANDARD LVCMOS33 [get_ports {valid_0[1]}]
-set_property IOSTANDARD LVCMOS33 [get_ports {valid_0[0]}]
+set_property IOSTANDARD LVCMOS18 [get_ports {din_0[3]}]
+set_property IOSTANDARD LVCMOS18 [get_ports {din_0[2]}]
+set_property IOSTANDARD LVCMOS18 [get_ports {din_0[1]}]
+set_property IOSTANDARD LVCMOS18 [get_ports {din_0[0]}]
+set_property IOSTANDARD LVCMOS18 [get_ports {valid_0[3]}]
+set_property IOSTANDARD LVCMOS18 [get_ports {valid_0[2]}]
+set_property IOSTANDARD LVCMOS18 [get_ports {valid_0[1]}]
+set_property IOSTANDARD LVCMOS18 [get_ports {valid_0[0]}]
 
 ```
 
