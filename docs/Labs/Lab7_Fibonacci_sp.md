@@ -228,11 +228,11 @@ endmodule // End of the testbench module tb_fi_ch
 
 ### Implementation
 
-The part can reference the [Generate Bitstream](https://uri-nextlab.github.io/ParallelProgrammingLabs/docs/Labs/Lab1_led.html) in lab1.
+The part can reference the [Generate Bitstream](https://auschill.github.io/FGPA-SoC-HLS-with-AMD-AUP-ZU3/docs/Labs/Lab1_led.html) in lab1.
 
 The block design is shown below:
 
-<div align=center><img src="imgs/v1/13.png" alt="drawing" width="500"/></div>
+<div align=center><img src="imgs/v4/27.PNG" alt="drawing" width="500"/></div>
 
 ### Download the bitstream file to PYNQ
 
@@ -256,11 +256,11 @@ Ensure you follow each step to properly transfer the bitstream file from your de
 
 If you don't press the button, which means the input is 0, then the first LED will light up as shown below:
 
-<div align=center><img src="imgs/v1/26.png" alt="drawing" width="200"/></div>
+<div align=center><img src="imgs/v4/28.jpg" alt="drawing" width="200"/></div>
 
 If you press the third button, which means the input is 4, then the LEDs will light as shown below:
 
-<div align=center><img src="imgs/v1/27.png" alt="drawing" width="200"/></div>
+<div align=center><img src="imgs/v4/29.jpg" alt="drawing" width="200"/></div>
 
 
 
