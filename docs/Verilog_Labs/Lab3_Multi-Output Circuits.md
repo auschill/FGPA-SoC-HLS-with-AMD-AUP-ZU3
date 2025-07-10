@@ -611,61 +611,63 @@ And then we can find the IP instantiation template below:
 
 **lab3_3_1_board.v**
 ```verilog
-// This module simulates a comparison between two 2-bit numbers using a ROM
-module lab3_3_1(
-    input clk,           // Clock input for synchronous operations
-    input [1:0] a,       // First 2-bit input for comparison
-    input [1:0] b,       // Second 2-bit input for comparison
-    output reg Lt,       // Output flag, set if 'a' is less than 'b'
-    output reg Eq,       // Output flag, set if 'a' equals 'b'
-    output reg Gt        // Output flag, set if 'a' is greater than 'b'
+module lab3_3_1_board_2(
+    input clk_p,         // Differential clock positive
+    input clk_n,         // Differential clock negative
+    input [1:0] a,
+    input [1:0] b,
+    output reg Lt,
+    output reg Eq,
+    output reg Gt
 );
 
-    // Combined address for ROM: concatenates inputs 'a' and 'b'
-    wire [3:0] addr_reg; // Combines 'a' and 'b' to form the ROM address
+    wire clk;            // Single-ended clock
 
-    // Output from ROM, stores comparison results based on 'a' and 'b'
-    wire [2:0] douta;    // Data output from ROM based on address 'addr_reg'
-
-    // Instance of ROM block
-    rom_data rom (
-      .clka(clk),        // Provides the system clock to the ROM
-      .addra(addr_reg),  // Supplies the address to ROM
-      .douta(douta)      // Retrieves the comparison result from ROM
+    // Differential clock buffer
+    IBUFDS #(
+        .DIFF_TERM("TRUE"),
+        .IBUF_LOW_PWR("FALSE")
+    ) IBUFDS_inst (
+        .I(clk_p),
+        .IB(clk_n),
+        .O(clk)
     );
 
-    // Assign block to combine 'a' and 'b' into a single address
-    // This part was initially inside an always block, but for a combinational approach, we use 'assign'
-    assign addr_reg = {a, b}; // Combines 'a' and 'b' to form the address without waiting for the clock edge
+    // Combined address
+    wire [3:0] addr_reg;
+    wire [2:0] douta;
 
-    // Combinational logic to set comparison flags based on ROM's output
-    // This block decides which of the flags (Lt, Eq, Gt) should be set based on the value of 'douta' from the ROM
-    always @(*) begin // Triggered on any change of 'douta'
+    blk_mem_gen_0 rom (
+        .clka(clk),
+        .addra(addr_reg),
+        .douta(douta)
+    );
+
+    assign addr_reg = {a, b};
+
+    always @(*) begin
         case (douta)
-            3'b001: begin // ROM output for 'a == b'
-                Lt = 0;
-                Eq = 1;
-                Gt = 0;
+            3'b001: begin 
+                Lt = 0; 
+                Eq = 1; 
+                Gt = 0; 
             end
-            3'b010: begin // ROM output for 'a < b'
-                Lt = 1;
-                Eq = 0;
-                Gt = 0;
+            3'b010: begin 
+                Lt = 1; 
+                Eq = 0; 
+                Gt = 0; 
             end
-            3'b100: begin // ROM output for 'a > b'
-                Lt = 0;
-                Eq = 0;
-                Gt = 1;
+            3'b100: begin 
+                Lt = 0; 
+                Eq = 0; 
+                Gt = 1; 
             end
-            default: begin // Safety default case to handle unexpected ROM outputs
-                Lt = 0;
-                Eq = 0;
-                Gt = 0;
+            default: begin 
+                Lt = 0; 
+                Eq = 0; 
+                Gt = 0; 
             end
         endcase
-    end
-    
-endmodule
 
 ```
 
@@ -691,6 +693,35 @@ memory_initialization_vector=
 001;
 
 ```
+
+**cons.xdc**
+```
+# Differential PL clock pins (100 MHz)
+set_property PACKAGE_PIN D7 [get_ports clk_p]
+set_property PACKAGE_PIN D6 [get_ports clk_n]
+set_property IOSTANDARD DIFF_SSTL12 [get_ports clk_p]
+set_property IOSTANDARD DIFF_SSTL12 [get_ports clk_n]
+
+# I/O pins
+set_property PACKAGE_PIN AG1 [get_ports Eq]
+set_property PACKAGE_PIN AF2 [get_ports Gt]
+set_property PACKAGE_PIN AE4 [get_ports Lt]
+set_property PACKAGE_PIN AB7 [get_ports {a[1]}]
+set_property PACKAGE_PIN AB6 [get_ports {a[0]}]
+set_property PACKAGE_PIN AC6 [get_ports {b[1]}]
+set_property PACKAGE_PIN AB2 [get_ports {b[0]}]
+
+# Pin voltages set to 1.8V
+set_property IOSTANDARD LVCMOS18 [get_ports Eq]
+set_property IOSTANDARD LVCMOS18 [get_ports Gt]
+set_property IOSTANDARD LVCMOS18 [get_ports Lt]
+set_property IOSTANDARD LVCMOS18 [get_ports {a[1]}]
+set_property IOSTANDARD LVCMOS18 [get_ports {a[0]}]
+set_property IOSTANDARD LVCMOS18 [get_ports {b[1]}]
+set_property IOSTANDARD LVCMOS18 [get_ports {b[0]}]
+
+```
+
 **tb.v**
 ```verilog
 
@@ -752,11 +783,11 @@ Generate the bitstream and program device like [Lab1](https://uri-nextlab.github
 
 Then you can press the button on the board, and you can see the LED is on like below:
 
-<div align=center><img src="imgs/v1/20.jpg" alt="drawing" width="200"/></div>
+<div align=center><img src="imgs/v5/18.jpg" alt="drawing" width="200"/></div>
 
-<div align=center><img src="imgs/v1/21.jpg" alt="drawing" width="200"/></div>
+<div align=center><img src="imgs/v5/16.jpg" alt="drawing" width="200"/></div>
 
-<div align=center><img src="imgs/v1/22.jpg" alt="drawing" width="200"/></div>
+<div align=center><img src="imgs/v5/17.jpg" alt="drawing" width="200"/></div>
 
 ### Part3-3-2
 
