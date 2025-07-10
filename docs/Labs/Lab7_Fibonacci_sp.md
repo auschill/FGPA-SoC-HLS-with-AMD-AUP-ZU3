@@ -793,23 +793,23 @@ You can see the ```Schematic``` under the RTL ANALYSIS as shown below:
 <div align=center><img src="imgs/v1/42.png" alt="drawing" width="500"/></div>
 
 
-Add constraints code: `part_2.xdc`.
+Add constraints code: `part_5.xdc`.
 
 ```verilog
 # PYNQ Pin Assignments
 ############################
 # On-board Slide Buttons  #
 ############################
-set_property PACKAGE_PIN R14 [get_ports dout_0]
-set_property IOSTANDARD LVCMOS33 [get_ports dout_0]
-set_property PACKAGE_PIN L19 [get_ports {din_0[3]}]
-set_property PACKAGE_PIN L20 [get_ports {din_0[2]}]
-set_property PACKAGE_PIN D19 [get_ports {din_0[0]}]
-set_property PACKAGE_PIN D20 [get_ports {din_0[1]}]
-set_property IOSTANDARD LVCMOS33 [get_ports {din_0[3]}]
-set_property IOSTANDARD LVCMOS33 [get_ports {din_0[2]}]
-set_property IOSTANDARD LVCMOS33 [get_ports {din_0[1]}]
-set_property IOSTANDARD LVCMOS33 [get_ports {din_0[0]}]
+set_property PACKAGE_PIN AB6 [get_ports {din_0[0]}]
+set_property PACKAGE_PIN AB7 [get_ports {din_0[1]}]
+set_property PACKAGE_PIN AB2 [get_ports {din_0[2]}]
+set_property PACKAGE_PIN AC6 [get_ports {din_0[3]}]
+set_property PACKAGE_PIN AF2 [get_ports dout_0]
+set_property IOSTANDARD LVCMOS18 [get_ports dout_0]
+set_property IOSTANDARD LVCMOS18 [get_ports {din_0[3]}]
+set_property IOSTANDARD LVCMOS18 [get_ports {din_0[2]}]
+set_property IOSTANDARD LVCMOS18 [get_ports {din_0[1]}]
+
 
 
 ```
@@ -869,7 +869,7 @@ The setting of the ```AXI_GPIO``` is the same as part IV.
 
 The block design is shown below:
 
-<div align=center><img src="imgs/v1/43.png" alt="drawing" width="700"/></div>
+<div align=center><img src="imgs/v4/25.PNG" alt="drawing" width="700"/></div>
 
 The AXI GPIO block will be assigned memory-mapped addresses that the processor can access. These addresses are used to control the GPIO pins and read their status. The memory mapping allows the processor to interact with the GPIO through standard read and write operations to specific addresses associated with the GPIO functions. We can get the addresses of the two GIPOs below:
 
@@ -930,7 +930,7 @@ gpio.write(DATA_OFFSET,DATA)
 ```
 Then the first LED will light as shown below:
 
-<div align=center><img src="imgs/v1/3.jpg" alt="drawing" width="200"/></div>
+<div align=center><img src="imgs/v4/26.jpg" alt="drawing" width="200"/></div>
 
 At the same time, you can run the code below:
 
