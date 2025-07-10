@@ -777,7 +777,7 @@ We can also run the simulation and see the result below:
 
 Then we can click on the Run synthesis under the SYNTHESIS and Run implementation under the IMPLEMENTATION. We should add the appropriate board-related master XDC file to the project and edit it to include the related pins like the below:
 
-<div align=center><img src="imgs/v1/12.png" alt="drawing" width="1200"/></div>
+<div align=center><img src="imgs/v5/21.PNG" alt="drawing" width="1200"/></div>
 
 Generate the bitstream and program device like [Lab1](https://uri-nextlab.github.io/ParallelProgrammingLabs/docs/Verilog_Labs/Lab1_Modeling_Concepts.html).
 
