@@ -563,7 +563,7 @@ endmodule // End of the testbench module tb_4
 
 ### Implementation
 
-The part can reference the [Generate Bitstream](https://uri-nextlab.github.io/ParallelProgrammingLabs/docs/Labs/Lab1_led.html) in lab1.
+The part can reference the [Generate Bitstream](https://auschill.github.io/FGPA-SoC-HLS-with-AMD-AUP-ZU3/docs/Verilog_Labs/Lab1_Modeling_Concepts.html) in lab1.
 We add the AXI_GPIO, double click on the IP, and have the setting like below:
 
 <div align=center><img src="imgs/v1/33.png" alt="drawing" width="500"/></div>
@@ -571,7 +571,7 @@ We add the AXI_GPIO, double click on the IP, and have the setting like below:
 Then we need to click on the green words like ```Run Block Automation``` and connect the ```FCLK_CLK0``` and ```M_AXI_GP0_ACLK``` together.
 The block design is shown below:
 
-<div align=center><img src="imgs/v1/32.png" alt="drawing" width="700"/></div>
+<div align=center><img src="imgs/v4/22.PNG" alt="drawing" width="700"/></div>
 
 
 
@@ -631,7 +631,7 @@ led=overlay.axi_gpio_0
 ```
 If you press the third button, which means the input data is 4, then the three LEDs will be on, which means the value is e
 
-<div align=center><img src="imgs/v1/22.png" alt="drawing" width="200"/></div>
+<div align=center><img src="imgs/v4/24.jpg" alt="drawing" width="200"/></div>
 
 At the same time, you can run the code below:
 ```python
@@ -645,7 +645,7 @@ You can see the state is ```e```
 
 If you press the first button, which means the input is 1, then the first LED will light as shown below:
 
-<div align=center><img src="imgs/v1/23.png" alt="drawing" width="200"/></div>
+<div align=center><img src="imgs/v4/23.jpg" alt="drawing" width="200"/></div>
 
 At the same time, you can run the code below:
 ```python
