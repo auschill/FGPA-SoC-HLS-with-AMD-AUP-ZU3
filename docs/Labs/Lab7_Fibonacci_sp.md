@@ -347,18 +347,18 @@ You can see the ```Schematic``` under the RTL ANALYSIS as shown below:
 ############################
 # On-board Slide Buttons  #
 ############################
-set_property PACKAGE_PIN AB6 [get_ports {din_0[3]}]
-set_property PACKAGE_PIN AB7 [get_ports {din_0[2]}]
-set_property PACKAGE_PIN AB2 [get_ports {din_0[1]}]
-set_property PACKAGE_PIN AC6 [get_ports {din_0[0]}]
+set_property PACKAGE_PIN AC6 [get_ports {din_0[3]}]
+set_property PACKAGE_PIN AB2 [get_ports {din_0[2]}]
+set_property PACKAGE_PIN AB7 [get_ports {din_0[1]}]
+set_property PACKAGE_PIN AB6 [get_ports {din_0[0]}]
 ############################
 # On-board leds             #
 ############################
-set_property PACKAGE_PIN L15 [get_ports {valid_0[4]}]
-set_property PACKAGE_PIN M14 [get_ports {valid_0[3]}]
-set_property PACKAGE_PIN N16 [get_ports {valid_0[2]}]
-set_property PACKAGE_PIN P14 [get_ports {valid_0[1]}]
-set_property PACKAGE_PIN R14 [get_ports {valid_0[0]}]
+set_property PACKAGE_PIN AF2 [get_ports {valid_0[4]}]
+set_property PACKAGE_PIN AG1 [get_ports {valid_0[3]}]
+set_property PACKAGE_PIN AE4 [get_ports {valid_0[2]}]
+set_property PACKAGE_PIN AH1 [get_ports {valid_0[1]}]
+set_property PACKAGE_PIN AE5 [get_ports {valid_0[0]}]
 set_property IOSTANDARD LVCMOS18 [get_ports {din_0[3]}]
 set_property IOSTANDARD LVCMOS18 [get_ports {din_0[2]}]
 set_property IOSTANDARD LVCMOS18 [get_ports {din_0[1]}]
@@ -405,11 +405,11 @@ endmodule // End of the testbench module tb_3
 
 ### Implementation
 
-The part can reference the [Generate Bitstream](https://uri-nextlab.github.io/ParallelProgrammingLabs/docs/Labs/Lab1_led.html) in lab1.
+The part can reference the [Generate Bitstream](https://auschill.github.io/FGPA-SoC-HLS-with-AMD-AUP-ZU3/docs/Labs/Lab1_led.html) in lab1.
 
 The block design is shown below:
 
-<div align=center><img src="imgs/v1/15.png" alt="drawing" width="500"/></div>
+<div align=center><img src="imgs/v4/30.PNG" alt="drawing" width="500"/></div>
 
 ### Download the bitstream file to PYNQ
 
@@ -427,13 +427,11 @@ bit.bitfile_name
 
 If you press the second button, which means the input is 2, then the first LED will light as shown below:
 
-<div align=center><img src="imgs/v1/25.png" alt="drawing" width="200"/></div>
+<div align=center><img src="imgs/v4/31.jpg" alt="drawing" width="200"/></div>
 
 If you press the third button, which means the input is 4, then the LEDs will light as shown below:
 
-<div align=center><img src="imgs/v1/24.png" alt="drawing" width="200"/></div>
-
-We use another RGB LED as the fifth output to stand for the ```0x1f```.
+<div align=center><img src="imgs/v4/32.jpg" alt="drawing" width="200"/></div>
 
 ## Part IV
 The table below outlines the characters that should be displayed corresponding to each value of the 4-bit input combination c3c2c1c0. It specifically includes valid Fibonacci numbers ranging from 0 to 8. If the input does not correspond to a valid Fibonacci number within this range, the character 'E' (representing "Error") should be displayed.
@@ -864,7 +862,7 @@ endmodule // End of the testbench module tb_5
 
 ### Implementation
 
-The part can reference the [Generate Bitstream](https://uri-nextlab.github.io/ParallelProgrammingLabs/docs/Labs/Lab1_led.html) in lab1.
+The part can reference the [Generate Bitstream](https://auschill.github.io/FGPA-SoC-HLS-with-AMD-AUP-ZU3/docs/Labs/Lab1_led.html) in lab1.
 The setting of the ```AXI_GPIO``` is the same as part IV.
 
 The block design is shown below:
